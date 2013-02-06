@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+    <title>Bootstrap 101 Template</title>
+    <!-- Bootstrap -->
+    <link href="Bootstp013013_files/bootstrap.css" rel="stylesheet" media="screen">
+	<style>
+	ul.simple-select
+	{
+		width: 150px;
+		list-style: none;
+	}
+	div.ridge {border-right-style: ridge;} 
+	</style>
+	</head>
+    <body>
+    <h1>Welcome to Layout</h1> 
+	    <div class="navbar">
+			<div class="navbar-inner">
+			<a class="brand" href="#">Title</a>
+			<ul class="nav" id="HeaderLine">
+				<!-- <div class="ridge"> -->
+				<li class="active" id="whoLi"><a href="#">Who</a></li>
+				<!-- </div> -->
+				<li id="addressLi"><a href="#">Address</a></li>
+				<li id="phoneLi"><a href="#">Phone</a></li>
+				<li id="secContactsLi"><a href="#">Secondary Contacts</a></li>
+				<li id="insuranceLi"><a href="#">Insurance</a></li>
+				<li id="pharmacyLi"><a href="#">Pharmacy</a></li>
+				<li id="medProvidersLi"><a href="#">Medical Providers</a></li>
+				<li id="sendResultsLi"><a href="#">Send Results To</a></li>
+				<li id="employerLi"><a href="#">Employer</a></li>
+				<li id="choicesLi"><a href="#">Choices</a></li>
+				<li id="statsLi"><a href="#">Stats</a></li>
+				<li id="miscLi"><a href="#">Misc</a></li>
+			</ul>
+			</div>
+		</div>
+	<br>
+	<br>
+	    
+<hr>	
+<!-- Begin Who -->
+<div id="mainContent">
+	<div id="who">
+
+	<!-- Last Name Table -->
+		<table class="table">
+			<thead>
+				<th>Last Name</th>
+				<th>Type:</th>
+				<th>Priority:</th>
+			</thead>
+			<tbody data-bind="foreach: whos">
+				<tr>
+					<td><input data-bind='text: lastName' /></td>
+					<td><select name  = "Type">           
+							<option>Legal</option>
+							<option>Former</option>              
+							<option>Medicare</option>               
+							<option>Birth Name</option>               
+							<option>Maiden Name</option>               
+							<option>Other</option>               
+						</select> 
+					</td>
+					<td><select name  = "Priority">           
+							<option>Normal</option>
+							<option>Low</option>              
+							<option>High</option>               
+						</select> 
+					</td>
+					<td><a href='#' data-bind='click: $root.removeWho'>Delete</a></td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<th>
+					<a href='#' data-bind='click: $root.addWho'>Add Last Name</a>
+				</th>
+			</tfoot>
+		</table>
+	<!-- First Name Table -->	
+		<table class="table">		
+			<thead>
+				<th>First Name</th>
+				<th>Type:</th>
+				<th>Priority:</th>
+			</thead>
+			<tbody data-bind="foreach: whos">
+				<tr>
+					<td><input data-bind='text: firstName' /></td>
+					<td><select name  = "Type">           
+							<option>Legal</option>
+							<option>Former</option>              
+							<option>Medicare</option>               
+							<option>Birth Name</option>               
+							<option>Nick Name</option>               
+							<option>Alias</option>               
+							<option>Other</option>               
+						</select> 
+					</td>
+					<td><select name  = "Priority">           
+							<option>Normal</option>
+							<option>Low</option>              
+							<option>High</option>               
+						</select> 
+					</td>
+					<td><a href='#' data-bind='click: $root.removeWho'>Delete</a></td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<th>
+					<a href='#' data-bind='click: $root.addWho'>Add First Name</a>
+				</th>
+			</tfoot>
+		</table>
+		<table class="table">		
+			<thead>
+				<th>Details:</th>
+			</thead>
+			<tbody data-bind="foreach: whos">
+				<tr>
+					<td>DOB:</td>
+					<td>Sex:</tr>
+				</tr>
+				<tr>
+					<td>SS:</td>
+					<td>Driver's License:</td>
+				</tr>
+				<tr><td>External ID:</td></tr>
+				<tr><td>User Defined:</td></tr>
+			</tbody>
+		</table>
+			
+	</div>
+<!-- End Who -->
+
+<!-- Begin Address -->
+	<div id="address">
+	<h3>Inside of Address</h3>
+
+	</div>
+	
+	<div id="address"> <!-- style="display:none" -->
+		<!-- left select -->
+		<div style="width: 200px; height : 300px; overflow:auto;">
+			<ul class="simple-select">
+				<li class="simple-select">
+				  <h3 class="simple-select">Primary</h3>
+				  <p class="simple-select">AvMed</p>
+				</li>
+				<li class="simple-select">
+				  <h3 class="simple-select">Secondary</h3>
+				  <p class="simple-select">Blue Cross/Blue Shield</p>
+				</li>
+				<li class="simple-select">
+				  <h3 class="simple-select">Tertiary</h3>
+				  <p class="simple-select">UnitedHealthCare</p>
+				</li>
+				<li class="simple-select">
+				  <h3 class="simple-select">Inactive</h3>
+				</li>
+				<li class="simple-select">
+				  <p>JJ's Insurance</p>
+				</li>
+				<li class="simple-select">
+				  <p>Bobby's Insurance and Plates</p>
+				</li>
+			</ul>
+		</div>
+		<div class="btn-group">
+						
+			<button class="btn"><i class="icon-plus"></i></button>
+			<button class="btn"><i class="icon-minus"></i></button>	
+						
+		</div>
+	</div>	
+<!-- End Address -->
+
+<!-- Begin PhoneInt-->
+	<div id="phone">
+		<table class="table">
+			<h4>Telephone Numbers:</h4>
+			<thead>
+				<th>Type</th>
+				<th>Number</th>
+				<th>Priority</th>
+				<th>SMS Enabled</th>
+				<th>Notes</th>
+			</thead>
+			<tbody data-bind="foreach: phones">
+				<tr>
+					<td><select name  = "typePhone">           
+							<option>Home</option>
+							<option>Mobile</option>              
+							<option>Mobile (home)</option>               
+							<option>Mobile (work)</option>               
+							<option>Work</option>               
+							<option>Spouse</option>
+							<option>Relative</option>
+							<option>Other</option>               
+						</select> 
+					</td>
+					<td><select name  = "Number">           
+							<option>Normal</option>
+							<option>Low</option>              
+							<option>High</option>               
+						</select> 
+					</td>
+					<td><select name  = "Priority">           
+							<option>Normal</option>
+							<option>Low</option>              
+							<option>High</option>               
+						</select> 
+					</td>
+					<td><select name  = "SMS Enabled">           
+							<option>Yes</option>
+							<option>No</option>              
+						</select> 
+					</td>
+					<td><input data-bind='text: notes' /></td>
+					<td><a href='#' data-bind='click: $root.removePhone'>Delete</a></td>
+				</tr>
+			</tbody>
+			<a href='#' data-bind='click: $root.addPhone'>Add number</a>
+		</table>
+		<p>
+			<label>Associated Address:
+				<select name  = "assocAddress">           
+					<option>None</option>
+					<option>Line</option>               
+				</select> 
+			</label>
+		</p>
+<!-- Email Addresses -->		
+		<br>
+		<table class="table">
+			<h4>Email Addresses:</h4>
+			<thead>
+				<th>Type</th>
+				<th>Address</th>
+				<th>Priority</th>
+			</thead>
+			<tbody data-bind="foreach: phones">
+				<tr>
+					<td><select name  = "typeEmail">           
+							<option>Home</option>
+							<option>Work</option>               
+							<option>Spouse</option>
+							<option>Relative</option>
+							<option>Other</option>               
+						</select> 
+					</td>
+					<td><input data-bind='value: emailAddress' /></td> <!-- ??Need to Request data from server?? -->
+					<td><select name  = "Priority">           
+							<option>Normal</option>
+							<option>Low</option>              
+							<option>High</option>               
+						</select> 
+					</td>
+					<td><a href='#' data-bind='click: $root.removePhone'>Delete</a></td>
+				</tr>
+			</tbody>
+			<a href='#' data-bind='click: $root.addPhone'>Add Email</a>
+		</table>
+<!-- Websites -->		
+		<br>
+		<table class="table">
+			<h4>Websites:</h4>
+			<thead>
+				<th>Type</th>
+				<th>Address</th>
+				<th>Priority</th>
+			</thead>
+			<tbody data-bind="foreach: phones">
+				<tr>
+					<td><select name  = "typeWeb">           
+							<option>Home</option>
+							<option>Work</option>               
+							<option>Personal</option>
+							<option>Relative</option>
+							<option>Other</option>               
+						</select> 
+					</td>
+					<td><input data-bind='value: webAddress' /></td> <!-- ??Need to Request data from server?? -->
+					<td><select name  = "Priority">           
+							<option>Normal</option>
+							<option>Low</option>              
+							<option>High</option>               
+						</select> 
+					</td>
+					<td><a href='#' data-bind='click: $root.removePhone'>Delete</a></td>
+				</tr>
+			</tbody>
+			<a href='#' data-bind='click: $root.addPhone'>Add Website</a>
+		</table>
+	</div>
+<!-- End PhoneInt-->
+
+<!-- Begin Secondary Contacts -->
+	<div id="secContacts">
+	<h3>Inside of 2nd contacts</h3>
+
+	</div>
+<!-- End Secondary Contacts -->
+
+<!-- Begin Insurance -->
+	<!-- Insurance Left Nav -->
+	<div id="insurance"> <!-- style="display:none" -->
+		<!-- left select -->
+		<div style="width: 200px; height : 300px; overflow:auto;">
+			<ul class="simple-select">
+				<li class="simple-select">
+				  <h3 class="simple-select">Primary</h3>
+				  <p class="simple-select">AvMed</p>
+				</li>
+				<li class="simple-select">
+				  <h3 class="simple-select">Secondary</h3>
+				  <p class="simple-select">Blue Cross/Blue Shield</p>
+				</li>
+				<li class="simple-select">
+				  <h3 class="simple-select">Tertiary</h3>
+				  <p class="simple-select">UnitedHealthCare</p>
+				</li>
+				<li class="simple-select">
+				  <h3 class="simple-select">Inactive</h3>
+				</li>
+				<li class="simple-select">
+				  <p>JJ's Insurance</p>
+				</li>
+				<li class="simple-select">
+				  <p>Bobby's Insurance and Plates</p>
+				</li>
+			</ul>
+		</div>
+		<div class="btn-group">
+						
+			<button class="btn"><i class="icon-plus"></i></button>
+			<button class="btn"><i class="icon-minus"></i></button>	
+						
+		</div>
+	</div>	
+	<!-- 
+
+		* Need to have a search for insruance company.
+			* Will display values of address, etc.
+		* Drop down of list of secondary contacts with link to add another person.
+		* 
+		
+	-->
+<!-- End Insurance -->
+<!-- Begin Pharmacy -->
+<!-- 
+	* Ordered by Priority Number (do not display value)
+	* Names of pharmacy
+-->
+	<div id="pharmacy">
+	Inside of pharmacy
+
+	</div>
+<!-- End Pharmacy -->
+<!-- Begin Medical Providers -->
+<!-- 
+* Left Nav:
+* Active 
+** Name 
+   Speciality
+   
+* Inactive
+** Name 
+	Speciality.
+-->
+
+
+	<div id="medProviders">
+	Inside of Medical providers
+		<!-- left select -->
+		<div style="width: 200px; height : 300px; overflow:auto;">
+			<ul class="simple-select">
+				<li class="simple-select">
+				  <h3 class="simple-select">Primary</h3>
+				  <p class="simple-select">AvMed</p>
+				</li>
+				<li class="simple-select">
+				  <h3 class="simple-select">Secondary</h3>
+				  <p class="simple-select">Blue Cross/Blue Shield</p>
+				</li>
+				<li class="simple-select">
+				  <h3 class="simple-select">Tertiary</h3>
+				  <p class="simple-select">UnitedHealthCare</p>
+				</li>
+				<li class="simple-select">
+				  <h3 class="simple-select">Inactive</h3>
+				</li>
+				<li class="simple-select">
+				  <p>JJ's Insurance</p>
+				</li>
+				<li class="simple-select">
+				  <p>Bobby's Insurance and Plates</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+<!-- End Medical Providers -->
+<!-- Begin Send Results To -->
+<!--
+* Left Nav - Name Relationship
+-->
+	<div id="sendResults">
+	<h3>Inside of send results to</h3>
+	
+	</div>
+	
+	<!-- Send Results To Left Nav -->
+	<div id="sendResults"> <!-- style="display:none" -->
+		<!-- left select -->
+		<div style="width: 200px; height : 300px; overflow:auto;">
+			<ul class="simple-select">
+				<li class="simple-select">
+				  <h3 class="simple-select">Primary</h3>
+				  <p class="simple-select">AvMed</p>
+				</li>
+				<li class="simple-select">
+				  <h3 class="simple-select">Secondary</h3>
+				  <p class="simple-select">Blue Cross/Blue Shield</p>
+				</li>
+				<li class="simple-select">
+				  <h3 class="simple-select">Tertiary</h3>
+				  <p class="simple-select">UnitedHealthCare</p>
+				</li>
+				<li class="simple-select">
+				  <h3 class="simple-select">Inactive</h3>
+				</li>
+				<li class="simple-select">
+				  <p>JJ's Insurance</p>
+				</li>
+				<li class="simple-select">
+				  <p>Bobby's Insurance and Plates</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+<!-- End Send Results To -->
+<!-- Begin Employer -->
+<!-- Left Nav -->
+	<div id="employer">
+	Inside of employer
+
+	</div>
+<!-- End Employer -->
+<!-- Begin Choices -->
+<!-- 
+No Left Nav
+Same as OpenEMR
+-->
+	<div id="choices">
+	Inside of choices
+
+	</div>
+<!-- End Choices -->
+<!-- Begin Stats -->
+<!--
+No Left Nav
+Same as currently in OpenEMR
+-->
+	<div id="stats">
+	Inside of stats
+
+	</div>
+<!-- End Stats -->
+<!-- Begin Misc -->
+<!--
+No Left Nav
+Same as currently in OpenEMR
+-->
+	<div id="misc">
+	Inside of misc
+
+	</div>
+<!-- End Misc -->
+
+</div> 
+
+<!-- mainContent -->
+    <script src="Bootstp_files/jquery-latest.js"></script>
+    <script src="Bootstp_files/bootstrap.js"></script>
+	<script type="text/javascript">
+		function changeSelected(itemClicked) {
+			//Check to see if it is the same item currently selected.
+			//Change the active Item.
+			//Display the correct item.
+			
+			switch(itemClicked)
+			{
+				case "insurance" :
+				{
+					//Find current acitve and remove.
+					$("#HeaderLine").find(".active").attr('class','');
+					$("#insuranceLi").attr('class','active');
+					//Find all that shown and hide.
+					$("#mainContent").children("div").each(function (index) {
+							//console.log( index + ": " + $(this).text() );
+						console.log("id is %s",$(this).attr('id'));
+						if($(this).attr('id') != "insurance") {
+							console.log("hidding");
+							$(this).hide();
+						}
+						else {
+						console.log("showing");
+							$(this).show();
+						}
+					});
+					
+					
+						break;
+				}
+				
+				case "who" :
+				{
+					$("#HeaderLine").find(".active").attr('class','');
+					$("#whoLi").attr('class','active');
+					//Find all that shown and hide.
+					$("#mainContent").children("div").each(function (index) {
+							//console.log( index + ": " + $(this).text() );
+						console.log("id is %s",$(this).attr('id'));
+						if($(this).attr('id') != "who") {
+							console.log("hidding");
+							$(this).hide();
+						}
+						else {
+						console.log("showing");
+							$(this).show();
+						}
+					});
+					break;	
+				}
+				
+				case "address" :
+				{
+					$("#HeaderLine").find(".active").attr('class','');
+					$("#addressLi").attr('class','active');
+					//Find all that shown and hide.
+					$("#mainContent").children("div").each(function (index) {
+							//console.log( index + ": " + $(this).text() );
+						console.log("id is %s",$(this).attr('id'));
+						if($(this).attr('id') != "address") {
+							console.log("hidding");
+							$(this).hide();
+						}
+						else {
+						console.log("showing");
+							$(this).show();
+						}
+					});
+					break;	
+				}
+				
+				case "phone" :
+				{
+					$("#HeaderLine").find(".active").attr('class','');
+					$("#phoneLi").attr('class','active');
+					//Find all that shown and hide.
+					$("#mainContent").children("div").each(function (index) {
+							//console.log( index + ": " + $(this).text() );
+						console.log("id is %s",$(this).attr('id'));
+						if($(this).attr('id') != "phone") {
+							console.log("hidding");
+							$(this).hide();
+						}
+						else {
+						console.log("showing");
+							$(this).show();
+						}
+					});
+					break;	
+				}
+				
+				case "secContacts" :
+				{
+					$("#HeaderLine").find(".active").attr('class','');
+					$("#secContactsLi").attr('class','active');
+					//Find all that shown and hide.
+					$("#mainContent").children("div").each(function (index) {
+							//console.log( index + ": " + $(this).text() );
+						console.log("id is %s",$(this).attr('id'));
+						if($(this).attr('id') != "secContacts") {
+							console.log("hidding");
+							$(this).hide();
+						}
+						else {
+						console.log("showing");
+							$(this).show();
+						}
+					});
+					break;	
+				}
+				
+				case "pharmacy" :
+				{
+					$("#HeaderLine").find(".active").attr('class','');
+					$("#pharmacyLi").attr('class','active');
+					//Find all that shown and hide.
+					$("#mainContent").children("div").each(function (index) {
+							//console.log( index + ": " + $(this).text() );
+						console.log("id is %s",$(this).attr('id'));
+						if($(this).attr('id') != "pharmacy") {
+							console.log("hidding");
+							$(this).hide();
+						}
+						else {
+						console.log("showing");
+							$(this).show();
+						}
+					});
+					break;	
+				}
+				
+				case "medProviders" :
+				{
+					$("#HeaderLine").find(".active").attr('class','');
+					$("#medProvidersLi").attr('class','active');
+					//Find all that shown and hide.
+					$("#mainContent").children("div").each(function (index) {
+							//console.log( index + ": " + $(this).text() );
+						console.log("id is %s",$(this).attr('id'));
+						if($(this).attr('id') != "medProviders") {
+							console.log("hidding");
+							$(this).hide();
+						}
+						else {
+						console.log("showing");
+							$(this).show();
+						}
+					});
+					break;	
+				}
+				
+				case "sendResults" :
+				{
+					$("#HeaderLine").find(".active").attr('class','');
+					$("#sendResultsLi").attr('class','active');
+					//Find all that shown and hide.
+					$("#mainContent").children("div").each(function (index) {
+							//console.log( index + ": " + $(this).text() );
+						console.log("id is %s",$(this).attr('id'));
+						if($(this).attr('id') != "sendResults") {
+							console.log("hidding");
+							$(this).hide();
+						}
+						else {
+						console.log("showing");
+							$(this).show();
+						}
+					});
+					break;	
+				}
+				
+				case "employer" :
+				{
+					$("#HeaderLine").find(".active").attr('class','');
+					$("#employerLi").attr('class','active');
+					//Find all that shown and hide.
+					$("#mainContent").children("div").each(function (index) {
+							//console.log( index + ": " + $(this).text() );
+						console.log("id is %s",$(this).attr('id'));
+						if($(this).attr('id') != "employer") {
+							console.log("hidding");
+							$(this).hide();
+						}
+						else {
+						console.log("showing");
+							$(this).show();
+						}
+					});
+					break;	
+				}
+				
+				case "choices" :
+				{
+					$("#HeaderLine").find(".active").attr('class','');
+					$("#choicesLi").attr('class','active');
+					//Find all that shown and hide.
+					$("#mainContent").children("div").each(function (index) {
+							//console.log( index + ": " + $(this).text() );
+						console.log("id is %s",$(this).attr('id'));
+						if($(this).attr('id') != "choices") {
+							console.log("hidding");
+							$(this).hide();
+						}
+						else {
+						console.log("showing");
+							$(this).show();
+						}
+					});
+					break;	
+				}
+				
+				case "stats" :
+				{
+					$("#HeaderLine").find(".active").attr('class','');
+					$("#statsLi").attr('class','active');
+					//Find all that shown and hide.
+					$("#mainContent").children("div").each(function (index) {
+							//console.log( index + ": " + $(this).text() );
+						console.log("id is %s",$(this).attr('id'));
+						if($(this).attr('id') != "stats") {
+							console.log("hidding");
+							$(this).hide();
+						}
+						else {
+						console.log("showing");
+							$(this).show();
+						}
+					});
+					break;	
+				}
+				
+				case "misc" :
+				{
+					$("#HeaderLine").find(".active").attr('class','');
+					$("#miscLi").attr('class','active');
+					//Find all that shown and hide.
+					$("#mainContent").children("div").each(function (index) {
+							//console.log( index + ": " + $(this).text() );
+						console.log("id is %s",$(this).attr('id'));
+						if($(this).attr('id') != "misc") {
+							console.log("hidding");
+							$(this).hide();
+						}
+						else {
+						console.log("showing");
+							$(this).show();
+						}
+					});
+					break;	
+				}
+			}
+		}
+		$(document).ready(function() {
+			
+			document.querySelector("#insuranceLi").addEventListener("click",function () { changeSelected("insurance")} , false);
+			document.querySelector("#whoLi").addEventListener("click",function () { changeSelected("who")} , false);
+			document.querySelector("#addressLi").addEventListener("click",function () { changeSelected("address")} , false);
+			document.querySelector("#phoneLi").addEventListener("click",function () { changeSelected("phone")} , false);
+			document.querySelector("#secContactsLi").addEventListener("click",function () { changeSelected("secContacts")} , false);
+			document.querySelector("#pharmacyLi").addEventListener("click",function () { changeSelected("pharmacy")} , false);
+			document.querySelector("#medProvidersLi").addEventListener("click",function () { changeSelected("medProviders")} , false);
+			document.querySelector("#sendResultsLi").addEventListener("click",function () { changeSelected("sendResults")} , false);
+			document.querySelector("#employerLi").addEventListener("click",function () { changeSelected("employer")} , false);
+			document.querySelector("#choicesLi").addEventListener("click",function () { changeSelected("choices")} , false);
+			document.querySelector("#statsLi").addEventListener("click",function () { changeSelected("stats")} , false);
+			document.querySelector("#miscLi").addEventListener("click",function () { changeSelected("misc")} , false);
+			changeSelected("who");
+			
+		});
+				
+	</script>
+    
+    
+    </body></html>
